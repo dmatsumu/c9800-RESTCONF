@@ -2,7 +2,7 @@
 
 ## Abstract
 
-C9800 can be accessed from RESTCONF using YANG model. But YANG model is very difficult to find the correct url and parameters. So I created the C9800 API wrapper. This is useful for the c9800 API beginner.
+C9800 can be accessed from RESTCONF using YANG model. But YANG model is very difficult to find the correct url and parameters. So I created the C9800 API wrapper. This is useful for the c9800 API beginner because you don't have to care about IOS-XE YANG model.
 
 ## How to use
 
