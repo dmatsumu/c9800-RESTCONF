@@ -17,35 +17,35 @@ Reffering to the sample_code.py
 ### display APs under the WLC
 def get_ap_list():
 
-### display WLANs under the WLC
-def get_wlan_list():
+### def get_wlan_list():
+display WLANs under the WLC
 
-### display AP radio operation info from "Cisco-IOS-XE-wireless-access-point-oper:radio-oper-data"
-def get_ap_radio_oper_info(wtp_mac, radio_slot_id):
+### def get_ap_radio_oper_info(wtp_mac, radio_slot_id):
+display AP radio operation info from "Cisco-IOS-XE-wireless-access-point-oper:radio-oper-data"
 
-### display AP operation info from "Cisco-IOS-XE-wireless-access-point-oper:oper-data"
-def get_ap_oper_info(wtp_mac):
+### def get_ap_oper_info(wtp_mac):
+display AP operation info from "Cisco-IOS-XE-wireless-access-point-oper:oper-data"
 
-### display AP MAC address from "Cisco-IOS-XE-wireless-access-point-oper:ap-name-mac-map"
-def get_wtp_mac_by_ap_name(ap_name):
+### def get_wtp_mac_by_ap_name(ap_name):
+display AP MAC address from "Cisco-IOS-XE-wireless-access-point-oper:ap-name-mac-map"
 
-### display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
-def get_wlan_id_by_wlan_profile_name(wlan_profile_name):
+### def get_wlan_id_by_wlan_profile_name(wlan_profile_name):
+display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
 
-### display ssid counters info from "Cisco-IOS-XE-wireless-access-point-oper:ssid-counters"
-def get_ssid_counters(wtp_mac, radio_slot_id, wlan_id):
+### def get_ssid_counters(wtp_mac, radio_slot_id, wlan_id):
+display ssid counters info from "Cisco-IOS-XE-wireless-access-point-oper:ssid-counters"
 
-### display CAPWAP info from "Cisco-IOS-XE-wireless-access-point-oper:capwap-data"
-def get_capwap_data(wtp_mac):
+### def get_capwap_data(wtp_mac):
+display CAPWAP info from "Cisco-IOS-XE-wireless-access-point-oper:capwap-data"
 
-### display RRM operation info from "Cisco-IOS-XE-wireless-rrm-oper:rrm-oper-data"
-def get_rrm_oper_info(wtp_mac, radio_slot_id):
+### def get_rrm_oper_info(wtp_mac, radio_slot_id):
+display RRM operation info from "Cisco-IOS-XE-wireless-rrm-oper:rrm-oper-data"
 
-### dispaly AP summary info from many sources with AP name and radio slot number
-def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
+### def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
+dispaly AP summary info from many sources with AP name and radio slot number
 
-### dispaly AP summary info from many sources with AP name ONLY
-def get_ap_info_by_ap_name(ap_name):
+### def get_ap_info_by_ap_name(ap_name):
+dispaly AP summary info from many sources with AP name ONLY
 
 ## Notes
 - This python code is build in my lab environment. Please note that errors may occur depending on the environment.
