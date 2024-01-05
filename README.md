@@ -14,8 +14,8 @@ Reffering to the sample_code.py
 
 ## Function list
 
-### display APs under the WLC
-def get_ap_list():
+### def get_ap_list():
+display APs under the WLC
 
 ### def get_wlan_list():
 display WLANs under the WLC
