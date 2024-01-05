@@ -1,0 +1,187 @@
+(c9800) [dmatsumu@localhost c9800]$ python3 test01.py
+{
+  "ap_name": "C9120AXI",
+  "ap_mac": "f4:bd:9e:39:df:e0",
+  "ap_ipaddress": "10.10.30.146",
+  "ap_netmask": "255.255.255.0",
+  "ap_gateway": "10.10.30.210",
+  "ap_nameserver": "8.8.8.8",
+  "ap_prime_wlc": "10.10.30.102",
+  "ap_second_wlc": "0.0.0.0",
+  "ap_tertiary_wlc": "0.0.0.0",
+  "ap_serial": "FGL2336LBDW",
+  "ap_model": "C9120AXI-Q",
+  "ap_sw_ver": "17.9.5.38",
+  "ap_policy_tag": "osaka",
+  "ap_site_tag": "osaka",
+  "ap_rf_tag": "osaka",
+  "slots": [
+    {
+      "slot_id": "0",
+      "ap_channel": "1",
+      "ap_channel_util": "10",
+      "ap_station_num": "0",
+      "ap_tpc": "6",
+      "ssids": [
+        {
+          "wlan_id": 4,
+          "wlan_profile_name": "KTEST4",
+          "ssid": "KTEST4"
+        }
+      ]
+    },
+    {
+      "slot_id": "1",
+      "ap_channel": "132",
+      "ap_channel_util": "1",
+      "ap_station_num": "0",
+      "ap_tpc": "8",
+      "ssids": [
+        {
+          "wlan_id": 3,
+          "wlan_profile_name": "KTEST3",
+          "ssid": "KTEST3"
+        },
+        {
+          "wlan_id": 4,
+          "wlan_profile_name": "KTEST4",
+          "ssid": "KTEST4"
+        }
+      ]
+    }
+  ]
+}
+### wlan info ###
+{
+  "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry": [
+    {
+      "profile-name": "KTEST1",
+      "wlan-id": 1,
+      "ft-mode": "dot11r-disabled",
+      "local-eap-profile-name": "PEAP",
+      "local-eap-enable": true,
+      "mu-mimo": false,
+      "authentication-list": "LocalEAP-Authen",
+      "apf-vap-id-data": {
+        "ssid": "KTEST1",
+        "wlan-status": true
+      },
+      "vap-dot11ax-cfg": {
+        "he-ofdma-downlink": false,
+        "he-ofdma-uplink": false,
+        "he-mumimo-downlink": false,
+        "he-mumimo-uplink": false,
+        "he-dot11-ax": false
+      },
+      "mdns-sd-mode": "mdns-sd-drop",
+      "device-analytics": {
+        "da-support": false,
+        "da-pc-support": false
+      },
+      "okc": false,
+      "sched-cfg": {
+        "asr-enable": false
+      },
+      "wlan-radio-policies": {
+        "wlan-radio-policy": [
+          {
+            "band": "dot11-5-ghz-band"
+          }
+        ]
+      }
+    },
+    {
+      "profile-name": "KTEST2",
+      "wlan-id": 2,
+      "ft-mode": "dot11r-disabled",
+      "local-eap-profile-name": "PEAP",
+      "local-eap-enable": true,
+      "mu-mimo": false,
+      "authentication-list": "LocalEAP-Authen",
+      "apf-vap-id-data": {
+        "ssid": "KTEST2",
+        "wlan-status": true
+      },
+      "apf-vap-802-11v-data": {
+        "dot11v-dms": false,
+        "dot11v-bss-max-idle": false
+      },
+      "vap-dot11ax-cfg": {
+        "he-ofdma-downlink": false,
+        "he-ofdma-uplink": false,
+        "he-mumimo-downlink": false,
+        "he-mumimo-uplink": false,
+        "he-dot11-ax": false
+      },
+      "okc": false,
+      "sched-cfg": {
+        "asr-enable": false
+      },
+      "wlan-radio-policies": {
+        "wlan-radio-policy": [
+          {
+            "band": "dot11-5-ghz-band"
+          }
+        ]
+      }
+    },
+    {
+      "profile-name": "KTEST3",
+      "wlan-id": 3,
+      "security-wpa": false,
+      "wpa2-enabled": false,
+      "wpa2-aes": false,
+      "auth-key-mgmt-dot1x": false,
+      "ft-mode": "dot11r-disabled",
+      "local-eap-profile-name": "PEAP",
+      "local-eap-enable": true,
+      "mu-mimo": false,
+      "authentication-list": "LocalEAP-Authen",
+      "apf-vap-id-data": {
+        "ssid": "KTEST3",
+        "chd": false,
+        "wlan-status": true
+      },
+      "vap-dot11ax-cfg": {
+        "he-ofdma-downlink": false,
+        "he-ofdma-uplink": false,
+        "he-mumimo-downlink": false,
+        "he-mumimo-uplink": false,
+        "he-dot11-ax": false
+      },
+      "okc": false,
+      "sched-cfg": {
+        "asr-enable": false
+      },
+      "wlan-radio-policies": {
+        "wlan-radio-policy": [
+          {
+            "band": "dot11-5-ghz-band"
+          }
+        ]
+      }
+    },
+    {
+      "profile-name": "KTEST4",
+      "wlan-id": 4,
+      "wep-key-index": 1,
+      "wpa2-enabled": false,
+      "auth-key-mgmt-dot1x": false,
+      "auth-key-mgmt-dot1x-sha256": true,
+      "ft-mode": "dot11r-disabled",
+      "pmf-options": "apf-vap-pmf-required",
+      "multicast-buffer-value": 0,
+      "apf-vap-id-data": {
+        "ssid": "KTEST4",
+        "wlan-status": true
+      },
+      "wpa3-enabled": true
+    }
+  ]
+}
+### wlan id ###
+3
+(c9800) [dmatsumu@localhost c9800]$
+(c9800) [dmatsumu@localhost c9800]$
+(c9800) [dmatsumu@localhost c9800]$
+(c9800) [dmatsumu@localhost c9800]$
