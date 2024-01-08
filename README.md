@@ -4,13 +4,43 @@
 
 C9800 can be accessed from RESTCONF using YANG model. But YANG model is very difficult to find the correct url and parameters. So I created the C9800 API wrapper. This is useful for the c9800 API beginner because you don't have to care about IOS-XE YANG model.
 
-## How to use
+## Installation 
+### Clone the repo
 
+```
+git clone https://github.com/dmatsumu/c9800-RESTCONF
+```
+
+### Go to your project folder
+
+```
+cd c9800-RESTCONF
+```
+
+### install virtualenv via pip
+
+```
+pip install virtualenv
+```
+
+### Create the venv
+
+```
+python3 -m venv .
+```
+
+### Activte your venv
+
+```
+source ./bin/activate
+```
+
+## Usage
 ### Setup config.json
-You need to input parameter according to your environment.
+You need to input parameter into "config.json" file according to your environment.
 
 ### import getApInfo.py to your code
-Reffering to the sample_code.py
+You need to import "getApInfo.py" into your python code. Reffering to the sample_code.py, if you need a detail.
 
 ## Function list
 
