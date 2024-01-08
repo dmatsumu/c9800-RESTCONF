@@ -40,7 +40,7 @@ source ./bin/activate
 You need to input parameter into "config.json" file according to your environment.
 
 ### import getApInfo.py to your code
-You need to import "getApInfo.py" into your python code. Reffering to the sample_code.py, if you need a detail.
+You need to import "getApInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.
 
 ## Function list
 
