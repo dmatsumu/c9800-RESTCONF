@@ -79,7 +79,7 @@ dispaly AP summary info from many sources with AP name ONLY
 
 ## Notes
 - This python code is build in my lab environment. Please note that errors may occur depending on the environment.
-- If you want to use "ssid-counters", you need to edit your AP join profile according to the following.
+- If you want to use "ssid-counters", you need to edit your c9800's AP join profile configuration according to the following.
 
 ```
 no statistics traffic-distribution
