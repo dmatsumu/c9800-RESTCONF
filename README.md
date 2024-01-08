@@ -39,7 +39,7 @@ source ./bin/activate
 ### Setup config.json
 You need to input parameter into "config.json" file according to your environment.
 
-### import getApInfo.py to your code
+### Import getApInfo.py to your code
 You need to import "getApInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.
 
 ## Function list
@@ -79,4 +79,12 @@ dispaly AP summary info from many sources with AP name ONLY
 
 ## Notes
 - This python code is build in my lab environment. Please note that errors may occur depending on the environment.
+- If you want to use "ssid-counters", you need to edit your AP join profile according to the following.
+
+```
+no statistics traffic-distribution
+bssid-stats
+bssid-stats bssid-stats-frequency 30
+```
+
 - Client information will be created soon(maybe).
