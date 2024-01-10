@@ -1,16 +1,16 @@
 (c9800) [dmatsumu@localhost c9800]$ python3 test01.py
 {
-  "ap_name": "C9120AXI",
-  "ap_mac": "f4:bd:9e:39:df:e0",
-  "ap_ipaddress": "10.10.30.146",
+  "ap_name": "AP9136",
+  "ap_mac": "74:11:b2:ba:b9:a0",
+  "ap_ipaddress": "10.10.30.145",
   "ap_netmask": "255.255.255.0",
   "ap_gateway": "10.10.30.210",
   "ap_nameserver": "8.8.8.8",
   "ap_prime_wlc": "10.10.30.102",
   "ap_second_wlc": "0.0.0.0",
   "ap_tertiary_wlc": "0.0.0.0",
-  "ap_serial": "FGL2336LBDW",
-  "ap_model": "C9120AXI-Q",
+  "ap_serial": "FGL2632LJPZ",
+  "ap_model": "C9136I-Q",
   "ap_sw_ver": "17.9.5.38",
   "ap_policy_tag": "osaka",
   "ap_site_tag": "osaka",
@@ -18,8 +18,8 @@
   "slots": [
     {
       "slot_id": "0",
-      "ap_channel": "1",
-      "ap_channel_util": "10",
+      "ap_channel": "6",
+      "ap_channel_util": "17",
       "ap_station_num": "0",
       "ap_tpc": "6",
       "ssids": [
@@ -27,21 +27,69 @@
           "wlan_id": 4,
           "wlan_profile_name": "KTEST4",
           "ssid": "KTEST4"
+        },
+        {
+          "wlan_id": 5,
+          "wlan_profile_name": "dma-1x-rest",
+          "ssid": "dma-1x-rest"
         }
       ]
     },
     {
       "slot_id": "1",
-      "ap_channel": "132",
-      "ap_channel_util": "1",
+      "ap_channel": "64",
+      "ap_channel_util": "3",
       "ap_station_num": "0",
-      "ap_tpc": "8",
+      "ap_tpc": "6",
       "ssids": [
         {
           "wlan_id": 3,
           "wlan_profile_name": "KTEST3",
           "ssid": "KTEST3"
         },
+        {
+          "wlan_id": 4,
+          "wlan_profile_name": "KTEST4",
+          "ssid": "KTEST4"
+        },
+        {
+          "wlan_id": 5,
+          "wlan_profile_name": "dma-1x-rest",
+          "ssid": "dma-1x-rest"
+        }
+      ]
+    },
+    {
+      "slot_id": "2",
+      "ap_channel": "36",
+      "ap_channel_util": "0",
+      "ap_station_num": "0",
+      "ap_tpc": "1",
+      "ssids": [
+        {
+          "wlan_id": 3,
+          "wlan_profile_name": "KTEST3",
+          "ssid": "KTEST3"
+        },
+        {
+          "wlan_id": 4,
+          "wlan_profile_name": "KTEST4",
+          "ssid": "KTEST4"
+        },
+        {
+          "wlan_id": 5,
+          "wlan_profile_name": "dma-1x-rest",
+          "ssid": "dma-1x-rest"
+        }
+      ]
+    },
+    {
+      "slot_id": "3",
+      "ap_channel": "0",
+      "ap_channel_util": "0",
+      "ap_station_num": "0",
+      "ap_tpc": "1",
+      "ssids": [
         {
           "wlan_id": 4,
           "wlan_profile_name": "KTEST4",
@@ -176,12 +224,77 @@
         "wlan-status": true
       },
       "wpa3-enabled": true
+    },
+    {
+      "profile-name": "dma-1x-rest",
+      "wlan-id": 5,
+      "wep-key-index": 1,
+      "ft-mode": "dot11r-disabled",
+      "authentication-list": "ISE-method",
+      "multicast-buffer-value": 0,
+      "apf-vap-id-data": {
+        "ssid": "dma-1x-rest",
+        "wlan-status": true
+      }
     }
   ]
 }
 ### wlan id ###
 3
-(c9800) [dmatsumu@localhost c9800]$
-(c9800) [dmatsumu@localhost c9800]$
-(c9800) [dmatsumu@localhost c9800]$
-(c9800) [dmatsumu@localhost c9800]$
+### client common operation data ###
+{
+  "Cisco-IOS-XE-wireless-client-oper:common-oper-data": [
+    {
+      "client-mac": "68:a3:c4:10:49:40",
+      "ap-name": "C9120AXI",
+      "ms-ap-slot-id": 0,
+      "ms-radio-type": "client-dot11n-24-ghz-prot",
+      "wlan-id": 5,
+      "client-type": "dot11-client-normal",
+      "co-state": "client-status-run",
+      "aaa-override-passphrase": false,
+      "is-tvi-enabled": false,
+      "wlan-policy": {
+        "current-switching-mode": "central",
+        "wlan-switching-mode": "central",
+        "central-authentication": "client-is-non-hreap",
+        "central-dhcp": true,
+        "central-assoc-enable": true,
+        "vlan-central-switching": false,
+        "is-fabric-client": false,
+        "is-guest-fabric-client": false,
+        "upn-bit-flag": ""
+      },
+      "username": "bonita",
+      "guest-lan-client-info": {
+        "wired-vlan": 0,
+        "phy-ifid": 0,
+        "idle-time-seconds": 0
+      },
+      "method-id": "dot1x-auth-id",
+      "l3-vlan-override-received": false,
+      "upn-id": 0,
+      "is-locally-administered-mac": false,
+      "idle-timeout": 0,
+      "idle-timestamp": "1970-01-01T00:00:00+00:00"
+    }
+  ]
+}
+### client summary info by ip ###
+{
+  "client_ip": "10.10.30.242",
+  "client_mac": "68:a3:c4:10:49:40",
+  "client_connect_ap": "C9120AXI",
+  "client_connect_slot": 0,
+  "client_username": "bonita",
+  "client_method": "dot1x-auth-id",
+  "client_dot11_state": "associated",
+  "client_connect_channel": 1,
+  "client_connect_ssid": "dma-1x-rest",
+  "client_connect_wlan_profile": "dma-1x-rest",
+  "client_bytes_rx": "3969",
+  "client_bytes_tx": "4039",
+  "client_rssi": -21,
+  "client_snr": 70,
+  "client_spatial_stream": 1
+}

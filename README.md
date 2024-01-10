@@ -40,9 +40,9 @@ source ./bin/activate
 You need to input parameter into "config.json" file according to your environment.
 
 ### Import getApInfo.py to your code
-You need to import "getApInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.
+You need to import "getApInfo.py" and "getClientInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.
 
-## Function list
+## getApInfo.py Function list
 
 ### def get_ap_list():
 display APs under the WLC
@@ -77,6 +77,38 @@ dispaly AP summary info from many sources with AP name and radio slot number
 ### def get_ap_info_by_ap_name(ap_name):
 dispaly AP summary info from many sources with AP name ONLY
 
+## getClientInfo.py Function list
+
+### def get_common_oper_data():
+display Client common operation data under the WLC
+
+### def get_dot11_oper_data():
+display Client dot11 operation data under the WLC
+
+### def get_traffic_stats():
+display Client traffic stastics under the WLC
+
+### def get_sisf_db_mac():
+display Client ip mac binding table under the WLC
+
+### def get_common_oper_data_by_mac(client_mac):
+display Client common operation data by mac under the WLC
+
+### def get_dot11_oper_data_by_mac(client_mac):
+display Client dot11 operation data by mac under the WLC
+
+### def get_traffic_stats_by_mac(client_mac):
+display Client traffic stastics by mac under the WLC
+
+### def get_sisf_db_mac_by_mac(client_mac):
+display Client ip mac binding table by mac under the WLC
+
+### def get_client_mac_by_ip(ip_address):
+display Client MAC address by Client IP
+
+### def get_client_summary_by_ip(ip_address):
+dispaly Client info summary by Client IP
+
 ## Notes
 - This python code is build in my lab environment. Please note that errors may occur depending on the environment.
 - If you want to use "ssid-counters", you need to edit your c9800's AP join profile configuration according to the following.
@@ -86,5 +118,6 @@ no statistics traffic-distribution
 bssid-stats
 bssid-stats bssid-stats-frequency 30
 ```
+- AP information is update(2024/1/10).
+- Client information is up(2024/1/10).
 
-- Client information will be created soon(maybe).
