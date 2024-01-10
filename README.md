@@ -35,9 +35,18 @@ python3 -m venv .
 source ./bin/activate
 ```
 
+### Install requirements.txt
+
+```
+pip3 install -r requirements.txt
+```
+
 ## Usage
 ### Setup config.json
-You need to input parameter into "config.json" file according to your environment.
+You need to input the below parameter into "config.json" file according to your environment.
+- username
+- password
+- <WLC_ip_address> in base_url
 
 ### Import getApInfo.py to your code
 You need to import "getApInfo.py" and "getClientInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.

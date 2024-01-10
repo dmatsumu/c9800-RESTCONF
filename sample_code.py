@@ -1,6 +1,6 @@
 import json
-import getApInfo02 as AP
-import getClientInfo01 as CL
+import getApInfo as AP
+import getClientInfo as CL
 
 ap_info = AP.get_ap_info_by_ap_name("AP9136")
 print(json.dumps(ap_info, indent=2))
