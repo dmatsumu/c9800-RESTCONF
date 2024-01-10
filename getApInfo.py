@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 from requests.auth import HTTPBasicAuth
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -98,15 +99,18 @@ def get_wtp_mac_by_ap_name(ap_name):
     base_url = config_data["base_url"]
     ap_oper = config_data["ap_oper"]
 
-    ap_mac = ""
+    ap_mac = "nomac"
     ap_list = get_ap_list()
 
     for aplist in ap_list["Cisco-IOS-XE-wireless-access-point-oper:ap-name-mac-map"]:
         if ap_name == aplist["wtp-name"]:
             ap_mac = aplist["wtp-mac"]
-
-#    print(ap_mac)
-    return ap_mac
+    if ap_mac != "nomac":
+    #    print(ap_mac)
+        return ap_mac
+    else:
+        print("Input correct AP name")
+        sys.exit()
 
 ### display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
 def get_wlan_id_by_wlan_profile_name(wlan_profile_name):
