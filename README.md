@@ -48,7 +48,7 @@ You need to input the below parameter into "config.json" file according to your 
 - password
 - <WLC_ip_address> in base_url
 
-### Import getApInfo.py to your code
+### Import getApInfo.py and getClientInfo.py to your code
 You need to import "getApInfo.py" and "getClientInfo.py" into your python code. Please refer to the sample_code.py, if you need a sample.
 
 ## getApInfo.py Function list
