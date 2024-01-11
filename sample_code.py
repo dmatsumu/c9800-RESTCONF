@@ -18,5 +18,9 @@ client_common_oper_data = CL.get_common_oper_data()
 print(json.dumps(client_common_oper_data, indent=2))
 
 print("### client summary info by ip ###")
-client_summary_info = CL.get_client_summary_by_ip("10.10.30.242")
-print(json.dumps(client_summary_info, indent=2))
+client_summary_info_ip = CL.get_client_summary_by_ip("10.10.30.242")
+print(json.dumps(client_summary_info_ip, indent=2))
+
+print("### client summary info by username ###")
+client_summary_info_username = CL.get_client_summary_by_username("bonita")
+print(json.dumps(client_summary_info_username, indent=2))

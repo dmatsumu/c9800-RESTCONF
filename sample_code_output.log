@@ -1,4 +1,4 @@
-(c9800) [dmatsumu@localhost c9800]$ python3 test01.py
+[dmatsumu@localhost c9800]$ python3 test01.py
 {
   "ap_name": "AP9136",
   "ap_mac": "74:11:b2:ba:b9:a0",
@@ -19,7 +19,7 @@
     {
       "slot_id": "0",
       "ap_channel": "6",
-      "ap_channel_util": "17",
+      "ap_channel_util": "21",
       "ap_station_num": "0",
       "ap_tpc": "6",
       "ssids": [
@@ -292,9 +292,29 @@
   "client_connect_channel": 1,
   "client_connect_ssid": "dma-1x-rest",
   "client_connect_wlan_profile": "dma-1x-rest",
-  "client_bytes_rx": "3969",
-  "client_bytes_tx": "4039",
-  "client_rssi": -21,
+  "client_bytes_rx": "59301",
+  "client_bytes_tx": "32361",
+  "client_rssi": -19,
   "client_snr": 70,
   "client_spatial_stream": 1
 }
+### client summary info by username ###
+[
+  {
+    "client_ip": "10.10.30.242",
+    "client_mac": "68:a3:c4:10:49:40",
+    "client_connect_ap": "C9120AXI",
+    "client_connect_slot": 0,
+    "client_username": "bonita",
+    "client_method": "dot1x-auth-id",
+    "client_dot11_state": "associated",
+    "client_connect_channel": 1,
+    "client_connect_ssid": "dma-1x-rest",
+    "client_connect_wlan_profile": "dma-1x-rest",
+    "client_bytes_rx": "59301",
+    "client_bytes_tx": "32361",
+    "client_rssi": -19,
+    "client_snr": 70,
+    "client_spatial_stream": 1
+  }
+]

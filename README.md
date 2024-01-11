@@ -112,11 +112,20 @@ display Client traffic stastics by mac under the WLC
 ### def get_sisf_db_mac_by_mac(client_mac):
 display Client ip mac binding table by mac under the WLC
 
+### def get_client_ip_by_mac(client_mac):
+display Client IP address by mac
+
 ### def get_client_mac_by_ip(ip_address):
 display Client MAC address by Client IP
 
+### def get_client_mac_by_username(username):
+display Client MAC address by username
+
 ### def get_client_summary_by_ip(ip_address):
 dispaly Client info summary by Client IP
+
+### def get_client_summary_by_username(username):
+dispaly Client info summary by Client username
 
 ## Notes
 - This python code is build in my lab environment. Please note that errors may occur depending on the environment.
@@ -127,6 +136,9 @@ no statistics traffic-distribution
 bssid-stats
 bssid-stats bssid-stats-frequency 30
 ```
-- AP information is update(2024/1/10).
-- Client information is up(2024/1/10).
 
+## History
+- release (2024/1/5)
+- AP information is updated. (2024/1/10)
+- Client information is up. (2024/1/10)
+- Client information is updated. (2024/1/11)
