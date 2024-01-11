@@ -8,7 +8,9 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 config_file = open("config.json", "r")
 config_data = json.load(config_file)
 
-### display APs under the WLC
+#============================================================================================
+# display APs under the WLC
+#============================================================================================
 def get_ap_list():
     user = config_data["user"]
     password = config_data["password"]
@@ -27,7 +29,9 @@ def get_ap_list():
 #    print(response.text)
     return json.loads(response.text)
 
-### display WLANs under the WLC
+#============================================================================================
+# display WLANs under the WLC
+#============================================================================================
 def get_wlan_list():
     user = config_data["user"]
     password = config_data["password"]
@@ -46,7 +50,9 @@ def get_wlan_list():
 #    print(response.text)
     return json.loads(response.text)
 
-### display AP radio operation info from "Cisco-IOS-XE-wireless-access-point-oper:radio-oper-data"
+#============================================================================================
+# display AP radio operation info from "Cisco-IOS-XE-wireless-access-point-oper:radio-oper-data"
+#============================================================================================
 def get_ap_radio_oper_info(wtp_mac, radio_slot_id):
     user = config_data["user"]
     password = config_data["password"]
@@ -69,7 +75,9 @@ def get_ap_radio_oper_info(wtp_mac, radio_slot_id):
 #        print(response.text)
         return json.loads(response.text)
 
-### display AP operation info from "Cisco-IOS-XE-wireless-access-point-oper:oper-data"
+#============================================================================================
+# display AP operation info from "Cisco-IOS-XE-wireless-access-point-oper:oper-data"
+#============================================================================================
 def get_ap_oper_info(wtp_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -92,7 +100,9 @@ def get_ap_oper_info(wtp_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display AP MAC address from "Cisco-IOS-XE-wireless-access-point-oper:ap-name-mac-map"
+#============================================================================================
+# display AP MAC address from "Cisco-IOS-XE-wireless-access-point-oper:ap-name-mac-map"
+#============================================================================================
 def get_wtp_mac_by_ap_name(ap_name):
     user = config_data["user"]
     password = config_data["password"]
@@ -112,7 +122,9 @@ def get_wtp_mac_by_ap_name(ap_name):
         print("Input correct AP name")
         sys.exit()
 
-### display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
+#============================================================================================
+# display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
+#============================================================================================
 def get_wlan_id_by_wlan_profile_name(wlan_profile_name):
     user = config_data["user"]
     password = config_data["password"]
@@ -129,7 +141,9 @@ def get_wlan_id_by_wlan_profile_name(wlan_profile_name):
 #    print(wlan_id)
     return wlan_id
 
-### display ssid counters info from "Cisco-IOS-XE-wireless-access-point-oper:ssid-counters"
+#============================================================================================
+# display ssid counters info from "Cisco-IOS-XE-wireless-access-point-oper:ssid-counters"
+#============================================================================================
 def get_ssid_counters(wtp_mac, radio_slot_id, wlan_id):
     user = config_data["user"]
     password = config_data["password"]
@@ -152,7 +166,9 @@ def get_ssid_counters(wtp_mac, radio_slot_id, wlan_id):
 #        print(response.text)
         return json.loads(response.text)
 
-### display CAPWAP info from "Cisco-IOS-XE-wireless-access-point-oper:capwap-data"
+#============================================================================================
+# display CAPWAP info from "Cisco-IOS-XE-wireless-access-point-oper:capwap-data"
+#============================================================================================
 def get_capwap_data(wtp_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -175,7 +191,9 @@ def get_capwap_data(wtp_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display RRM operation info from "Cisco-IOS-XE-wireless-rrm-oper:rrm-oper-data"
+#============================================================================================
+# display RRM operation info from "Cisco-IOS-XE-wireless-rrm-oper:rrm-oper-data"
+#============================================================================================
 def get_rrm_oper_info(wtp_mac, radio_slot_id):
     user = config_data["user"]
     password = config_data["password"]
@@ -198,7 +216,9 @@ def get_rrm_oper_info(wtp_mac, radio_slot_id):
 #        print(response.text)
         return json.loads(response.text)
 
-### dispaly AP summary info from many sources with AP name and radio slot number
+#============================================================================================
+# dispaly AP summary info from many sources with AP name and radio slot number
+#============================================================================================
 def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
     wtp_mac = get_wtp_mac_by_ap_name(ap_name)
     ap_capwap_data = get_capwap_data(wtp_mac)
@@ -268,7 +288,9 @@ def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
 #    print(json.dumps(dict_value, indent=2))
     return dict_value
 
-### dispaly AP summary info from many sources with AP name ONLY
+#============================================================================================
+# dispaly AP summary info from many sources with AP name ONLY
+#============================================================================================
 def get_ap_info_by_ap_name(ap_name):
     wtp_mac = get_wtp_mac_by_ap_name(ap_name)
     ap_capwap_data = get_capwap_data(wtp_mac)

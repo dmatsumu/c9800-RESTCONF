@@ -8,7 +8,9 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 config_file = open("config.json", "r")
 config_data = json.load(config_file)
 
-### display Client common operation data under the WLC
+#============================================================================================
+# display Client common operation data under the WLC
+#============================================================================================
 def get_common_oper_data():
     user = config_data["user"]
     password = config_data["password"]
@@ -27,7 +29,9 @@ def get_common_oper_data():
 #    print(response.text)
     return json.loads(response.text)
 
-### display Client dot11 operation data under the WLC
+#============================================================================================
+# display Client dot11 operation data under the WLC
+#============================================================================================
 def get_dot11_oper_data():
     user = config_data["user"]
     password = config_data["password"]
@@ -46,7 +50,9 @@ def get_dot11_oper_data():
 #    print(response.text)
     return json.loads(response.text)
 
-### display Client traffic stastics under the WLC
+#============================================================================================
+# display Client traffic stastics under the WLC
+#============================================================================================
 def get_traffic_stats():
     user = config_data["user"]
     password = config_data["password"]
@@ -65,7 +71,9 @@ def get_traffic_stats():
 #    print(response.text)
     return json.loads(response.text)
 
-### display Client ip mac binding table under the WLC
+#============================================================================================
+# display Client ip mac binding table under the WLC
+#============================================================================================
 def get_sisf_db_mac():
     user = config_data["user"]
     password = config_data["password"]
@@ -84,10 +92,10 @@ def get_sisf_db_mac():
 #    print(response.text)
     return json.loads(response.text)
 
-###
-### by mac operation
-###
-### display Client common operation data by mac under the WLC
+
+#============================================================================================
+# display Client common operation data by mac under the WLC
+#============================================================================================
 def get_common_oper_data_by_mac(client_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -110,7 +118,9 @@ def get_common_oper_data_by_mac(client_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display Client dot11 operation data by mac under the WLC
+#============================================================================================
+# display Client dot11 operation data by mac under the WLC
+#============================================================================================
 def get_dot11_oper_data_by_mac(client_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -133,7 +143,9 @@ def get_dot11_oper_data_by_mac(client_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display Client traffic stastics by mac under the WLC
+#============================================================================================
+# display Client traffic stastics by mac under the WLC
+#============================================================================================
 def get_traffic_stats_by_mac(client_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -156,7 +168,9 @@ def get_traffic_stats_by_mac(client_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display Client ip mac binding table by mac under the WLC
+#============================================================================================
+# display Client ip mac binding table by mac under the WLC
+#============================================================================================
 def get_sisf_db_mac_by_mac(client_mac):
     user = config_data["user"]
     password = config_data["password"]
@@ -179,7 +193,9 @@ def get_sisf_db_mac_by_mac(client_mac):
 #        print(response.text)
         return json.loads(response.text)
 
-### display Client IP address by mac
+#============================================================================================
+# display Client IP address by mac
+#============================================================================================
 def get_client_ip_by_mac(client_mac):
     ip_address = "noip"
     ip_list = get_sisf_db_mac_by_mac(client_mac)
@@ -193,10 +209,9 @@ def get_client_ip_by_mac(client_mac):
         print("there is no ip address by mac you input")
         sys.exit()
 
-###
-### by IP
-###
-### display Client MAC address by Client IP
+#============================================================================================
+# display Client MAC address by Client IP
+#============================================================================================
 def get_client_mac_by_ip(ip_address):
 
     client_mac = "nomac"
@@ -213,10 +228,9 @@ def get_client_mac_by_ip(ip_address):
         print("Input correct IP address")
         sys.exit()
 
-###
-### by username
-###
-### display Client MAC address by username
+#============================================================================================
+# display Client MAC address by username
+#============================================================================================
 def get_client_mac_by_username(username):
 
     client_mac = "nomac"
@@ -237,7 +251,9 @@ def get_client_mac_by_username(username):
         print("There is no username you input")
         sys.exit()
 
-### dispaly Client info summary by Client IP
+#============================================================================================
+# dispaly Client info summary by Client IP
+#============================================================================================
 def get_client_summary_by_ip(ip_address):
 
     client_mac = get_client_mac_by_ip(ip_address)
@@ -289,10 +305,9 @@ def get_client_summary_by_ip(ip_address):
 #    print(dict_value)
     return dict_value
 
-### dispaly Client info summary by Client username
-###
-### this function returns list format because one user may have several devices.
-###
+#============================================================================================
+# dispaly Client info summary by Client username
+#============================================================================================
 def get_client_summary_by_username(username):
 
     client_mac_list = get_client_mac_by_username(username)
@@ -347,4 +362,5 @@ def get_client_summary_by_username(username):
         }
         list_value.append(dict_value.copy())
 #        printlist_value)
+        # this function returns list format because one user may have several devices.
         return list_value
