@@ -142,3 +142,4 @@ bssid-stats bssid-stats-frequency 30
 - AP information is updated. (2024/1/10)
 - Client information is up. (2024/1/10)
 - Client information is updated. (2024/1/11)
+- Client information is updated. (2024/1/19)

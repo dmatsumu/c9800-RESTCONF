@@ -363,4 +363,4 @@ def get_client_summary_by_username(username):
         list_value.append(dict_value.copy())
 #        printlist_value)
         # this function returns list format because one user may have several devices.
-        return list_value
+    return list_value
