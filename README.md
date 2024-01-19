@@ -100,6 +100,9 @@ display Client traffic stastics under the WLC
 ### def get_sisf_db_mac():
 display Client ip mac binding table under the WLC
 
+### def get_dc_info():
+display Client device info under the WLC
+
 ### def get_common_oper_data_by_mac(client_mac):
 display Client common operation data by mac under the WLC
 
@@ -111,6 +114,9 @@ display Client traffic stastics by mac under the WLC
 
 ### def get_sisf_db_mac_by_mac(client_mac):
 display Client ip mac binding table by mac under the WLC
+
+### def get_dc_info_by_mac(client_mac):
+display Client device info by mac under the WLC
 
 ### def get_client_ip_by_mac(client_mac):
 display Client IP address by mac
@@ -142,4 +148,5 @@ bssid-stats bssid-stats-frequency 30
 - AP information is updated. (2024/1/10)
 - Client information is up. (2024/1/10)
 - Client information is updated. (2024/1/11)
+- Client information is updated. (2024/1/17)
 - Client information is updated. (2024/1/19)
