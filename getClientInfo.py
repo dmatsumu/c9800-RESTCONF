@@ -92,6 +92,27 @@ def get_sisf_db_mac():
 #    print(response.text)
     return json.loads(response.text)
 
+#============================================================================================
+# display Client device info under the WLC
+#============================================================================================
+def get_dc_info():
+    user = config_data["user"]
+    password = config_data["password"]
+    base_url = config_data["base_url"]
+    client_oper = config_data["client_oper"]
+
+    url = base_url + client_oper + "/dc-info"
+
+    payload={}
+    headers={
+        "Accept" : "application/yang-data+json"
+    }
+
+    response = requests.get(url, headers=headers, data=payload, verify=False, auth=HTTPBasicAuth(user, password))
+
+#    print(response.text)
+    return json.loads(response.text)
+
 
 #============================================================================================
 # display Client common operation data by mac under the WLC
@@ -194,6 +215,31 @@ def get_sisf_db_mac_by_mac(client_mac):
         return json.loads(response.text)
 
 #============================================================================================
+# display Client device info by mac under the WLC
+#============================================================================================
+def get_dc_info_by_mac(client_mac):
+    user = config_data["user"]
+    password = config_data["password"]
+    base_url = config_data["base_url"]
+    client_oper = config_data["client_oper"]
+
+    url = base_url + client_oper + "/dc-info=" + client_mac
+
+    payload={}
+    headers={
+        "Accept" : "application/yang-data+json"
+    }
+
+    try:
+        response = requests.get(url, headers=headers, data=payload, verify=False, auth=HTTPBasicAuth(user, password))
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print("Error : ",e)
+    else:
+#        print(response.text)
+        return json.loads(response.text)
+
+#============================================================================================
 # display Client IP address by mac
 #============================================================================================
 def get_client_ip_by_mac(client_mac):
@@ -260,6 +306,7 @@ def get_client_summary_by_ip(ip_address):
     client_common_oper_data = get_common_oper_data_by_mac(client_mac)
     client_dot11_oper_data = get_dot11_oper_data_by_mac(client_mac)
     client_traffic_stats = get_traffic_stats_by_mac(client_mac)
+    client_device_info = get_dc_info_by_mac(client_mac)
 
     ### common operation data
     client_connect_ap = client_common_oper_data["Cisco-IOS-XE-wireless-client-oper:common-oper-data"][0]["ap-name"]
@@ -283,6 +330,9 @@ def get_client_summary_by_ip(ip_address):
     client_snr = client_traffic_stats["Cisco-IOS-XE-wireless-client-oper:traffic-stats"][0]["most-recent-snr"]
     client_spatial_stream = client_traffic_stats["Cisco-IOS-XE-wireless-client-oper:traffic-stats"][0]["spatial-stream"]
 
+    ### dc info(device information)
+    client_device_type = client_device_info["Cisco-IOS-XE-wireless-client-oper:dc-info"][0]["device-type"]
+
     dict_value = {}
     dict_value = {
         "client_ip": ip_address,
@@ -299,7 +349,8 @@ def get_client_summary_by_ip(ip_address):
         "client_bytes_tx": client_bytes_tx,
         "client_rssi": client_rssi,
         "client_snr": client_snr,
-        "client_spatial_stream": client_spatial_stream
+        "client_spatial_stream": client_spatial_stream,
+        "client_device_type": client_device_type
     }
 
 #    print(dict_value)
@@ -318,6 +369,7 @@ def get_client_summary_by_username(username):
         client_common_oper_data = get_common_oper_data_by_mac(client_mac)
         client_dot11_oper_data = get_dot11_oper_data_by_mac(client_mac)
         client_traffic_stats = get_traffic_stats_by_mac(client_mac)
+        client_device_info = get_dc_info_by_mac(client_mac)
         ip_address = get_client_ip_by_mac(client_mac)
 
         ### common operation data
@@ -342,6 +394,9 @@ def get_client_summary_by_username(username):
         client_snr = client_traffic_stats["Cisco-IOS-XE-wireless-client-oper:traffic-stats"][0]["most-recent-snr"]
         client_spatial_stream = client_traffic_stats["Cisco-IOS-XE-wireless-client-oper:traffic-stats"][0]["spatial-stream"]
 
+        ### dc info(device information)
+        client_device_type = client_device_info["Cisco-IOS-XE-wireless-client-oper:dc-info"][0]["device-type"]
+
         dict_value = {}
         dict_value = {
             "client_ip": ip_address,
@@ -358,9 +413,11 @@ def get_client_summary_by_username(username):
             "client_bytes_tx": client_bytes_tx,
             "client_rssi": client_rssi,
             "client_snr": client_snr,
-            "client_spatial_stream": client_spatial_stream
+            "client_spatial_stream": client_spatial_stream,
+            "client_device_type": client_device_type
         }
         list_value.append(dict_value.copy())
 #        printlist_value)
         # this function returns list format because one user may have several devices.
     return list_value
+
