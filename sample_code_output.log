@@ -1,4 +1,14 @@
-(c9800) [dmatsumu@localhost c9800]$ python3 test01.py
+[dmatsumu@localhost c9800]$ python3 test01.py
+### Fail pattern AP summary info by AP name and slot Id  ###
+Input correct AP name
+{
+  "ap_mac": "nomac"
+}
+### Fail pattern AP summary info  ###
+Input correct AP name
+{
+  "ap_mac": "nomac"
+}
 ### AP summary info  ###
 {
   "ap_name": "C9120AXI",
@@ -12,7 +22,7 @@
   "ap_tertiary_wlc": "0.0.0.0",
   "ap_serial": "FGL2336LBDW",
   "ap_model": "C9120AXI-Q",
-  "ap_sw_ver": "17.9.5.38",
+  "ap_sw_ver": "17.9.5.42",
   "ap_policy_tag": "osaka",
   "ap_site_tag": "osaka",
   "ap_rf_tag": "osaka",
@@ -20,8 +30,8 @@
     {
       "slot_id": "0",
       "ap_channel": "1",
-      "ap_channel_util": "13",
-      "ap_station_num": "1",
+      "ap_channel_util": "15",
+      "ap_station_num": "2",
       "ap_tpc": "6",
       "ssids": [
         {
@@ -40,18 +50,18 @@
       "slot_id": "1",
       "ap_channel": "132",
       "ap_channel_util": "1",
-      "ap_station_num": "1",
+      "ap_station_num": "0",
       "ap_tpc": "8",
       "ssids": [
-        {
-          "wlan_id": 3,
-          "wlan_profile_name": "KTEST3",
-          "ssid": "KTEST3"
-        },
         {
           "wlan_id": 4,
           "wlan_profile_name": "KTEST4",
           "ssid": "KTEST4"
+        },
+        {
+          "wlan_id": 3,
+          "wlan_profile_name": "KTEST3",
+          "ssid": "KTEST3"
         },
         {
           "wlan_id": 5,
@@ -175,13 +185,11 @@
     {
       "profile-name": "KTEST4",
       "wlan-id": 4,
-      "wep-key-index": 1,
       "wpa2-enabled": false,
       "auth-key-mgmt-dot1x": false,
       "auth-key-mgmt-dot1x-sha256": true,
       "ft-mode": "dot11r-disabled",
       "pmf-options": "apf-vap-pmf-required",
-      "multicast-buffer-value": 0,
       "apf-vap-id-data": {
         "ssid": "KTEST4",
         "wlan-status": true
@@ -191,10 +199,8 @@
     {
       "profile-name": "dma-1x-rest",
       "wlan-id": 5,
-      "wep-key-index": 1,
       "ft-mode": "dot11r-disabled",
       "authentication-list": "ISE-method",
-      "multicast-buffer-value": 0,
       "apf-vap-id-data": {
         "ssid": "dma-1x-rest",
         "wlan-status": true
@@ -243,7 +249,7 @@
     },
     {
       "client-mac": "68:a3:c4:10:49:40",
-      "ap-name": "AP9136",
+      "ap-name": "C9120AXI",
       "ms-ap-slot-id": 0,
       "ms-radio-type": "client-dot11n-24-ghz-prot",
       "wlan-id": 5,
@@ -274,40 +280,6 @@
       "is-locally-administered-mac": false,
       "idle-timeout": 0,
       "idle-timestamp": "1970-01-01T00:00:00+00:00"
-    },
-    {
-      "client-mac": "96:2e:4b:44:48:98",
-      "ap-name": "C9120AXI",
-      "ms-ap-slot-id": 1,
-      "ms-radio-type": "client-dot11ac",
-      "wlan-id": 5,
-      "client-type": "dot11-client-normal",
-      "co-state": "client-status-run",
-      "aaa-override-passphrase": false,
-      "is-tvi-enabled": false,
-      "wlan-policy": {
-        "current-switching-mode": "central",
-        "wlan-switching-mode": "central",
-        "central-authentication": "client-is-non-hreap",
-        "central-dhcp": true,
-        "central-assoc-enable": true,
-        "vlan-central-switching": false,
-        "is-fabric-client": false,
-        "is-guest-fabric-client": false,
-        "upn-bit-flag": ""
-      },
-      "username": "bonita",
-      "guest-lan-client-info": {
-        "wired-vlan": 0,
-        "phy-ifid": 0,
-        "idle-time-seconds": 0
-      },
-      "method-id": "dot1x-auth-id",
-      "l3-vlan-override-received": false,
-      "upn-id": 0,
-      "is-locally-administered-mac": true,
-      "idle-timeout": 0,
-      "idle-timestamp": "1970-01-01T00:00:00+00:00"
     }
   ]
 }
@@ -315,20 +287,25 @@
 {
   "client_ip": "10.10.30.242",
   "client_mac": "68:a3:c4:10:49:40",
-  "client_connect_ap": "AP9136",
+  "client_connect_ap": "C9120AXI",
   "client_connect_slot": 0,
   "client_username": "bonita",
   "client_method": "dot1x-auth-id",
   "client_dot11_state": "associated",
-  "client_connect_channel": 6,
+  "client_connect_channel": 1,
   "client_connect_ssid": "dma-1x-rest",
   "client_connect_wlan_profile": "dma-1x-rest",
-  "client_bytes_rx": "30908",
-  "client_bytes_tx": "18749",
-  "client_rssi": -34,
-  "client_snr": 64,
+  "client_bytes_rx": "74078",
+  "client_bytes_tx": "36009",
+  "client_rssi": -24,
+  "client_snr": 67,
   "client_spatial_stream": 1,
   "client_device_type": "Un-Classified Device"
+}
+### Fail pattern client summary info by ip ###
+Input correct IP address
+{
+  "client_mac": "nomac"
 }
 ### client summary info by username ###
 [
@@ -343,48 +320,37 @@
     "client_connect_channel": 1,
     "client_connect_ssid": "dma-1x-rest",
     "client_connect_wlan_profile": "dma-1x-rest",
-    "client_bytes_rx": "209204",
-    "client_bytes_tx": "63476",
-    "client_rssi": -19,
-    "client_snr": 71,
+    "client_bytes_rx": "535908",
+    "client_bytes_tx": "178377",
+    "client_rssi": -21,
+    "client_snr": 70,
     "client_spatial_stream": 1,
     "client_device_type": "Un-Classified Device"
   },
   {
     "client_ip": "10.10.30.242",
     "client_mac": "68:a3:c4:10:49:40",
-    "client_connect_ap": "AP9136",
+    "client_connect_ap": "C9120AXI",
     "client_connect_slot": 0,
     "client_username": "bonita",
     "client_method": "dot1x-auth-id",
     "client_dot11_state": "associated",
-    "client_connect_channel": 6,
+    "client_connect_channel": 1,
     "client_connect_ssid": "dma-1x-rest",
     "client_connect_wlan_profile": "dma-1x-rest",
-    "client_bytes_rx": "30908",
-    "client_bytes_tx": "18749",
-    "client_rssi": -34,
-    "client_snr": 64,
+    "client_bytes_rx": "74078",
+    "client_bytes_tx": "36009",
+    "client_rssi": -24,
+    "client_snr": 67,
     "client_spatial_stream": 1,
     "client_device_type": "Un-Classified Device"
-  },
-  {
-    "client_ip": "10.10.30.250",
-    "client_mac": "96:2e:4b:44:48:98",
-    "client_connect_ap": "C9120AXI",
-    "client_connect_slot": 1,
-    "client_username": "bonita",
-    "client_method": "dot1x-auth-id",
-    "client_dot11_state": "associated",
-    "client_connect_channel": 132,
-    "client_connect_ssid": "dma-1x-rest",
-    "client_connect_wlan_profile": "dma-1x-rest",
-    "client_bytes_rx": "612694",
-    "client_bytes_tx": "200179",
-    "client_rssi": -45,
-    "client_snr": 48,
-    "client_spatial_stream": 2,
-    "client_device_type": "iPhone 8"
   }
 ]
-(c9800) [dmatsumu@localhost c9800]$
+### Fail pattern client summary info by username ###
+There is no username you input
+[
+  {
+    "client_mac": "nomac"
+  }
+]
+[dmatsumu@localhost c9800]$

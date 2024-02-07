@@ -272,7 +272,8 @@ def get_client_mac_by_ip(ip_address):
         return client_mac
     else:
         print("Input correct IP address")
-        sys.exit()
+        return client_mac
+#        sys.exit()
 
 #============================================================================================
 # display Client MAC address by username
@@ -295,7 +296,10 @@ def get_client_mac_by_username(username):
         return mylist
     else:
         print("There is no username you input")
-        sys.exit()
+        mydict['client_mac'] = client_mac
+        mylist.append(mydict.copy())
+        return mylist
+#        sys.exit()
 
 #============================================================================================
 # dispaly Client info summary by Client IP
@@ -303,6 +307,11 @@ def get_client_mac_by_username(username):
 def get_client_summary_by_ip(ip_address):
 
     client_mac = get_client_mac_by_ip(ip_address)
+    if client_mac == "nomac":
+        dict_value = {
+            "client_mac": client_mac
+        }
+        return dict_value
     client_common_oper_data = get_common_oper_data_by_mac(client_mac)
     client_dot11_oper_data = get_dot11_oper_data_by_mac(client_mac)
     client_traffic_stats = get_traffic_stats_by_mac(client_mac)
@@ -365,6 +374,11 @@ def get_client_summary_by_username(username):
 
     list_value = []
     for clientmac in client_mac_list:
+        if clientmac["client_mac"] == "nomac":
+            dict_value = {}
+            dict_value['client_mac'] = clientmac["client_mac"]
+            list_value.append(dict_value.copy())
+            return list_value
         client_mac = clientmac["client_mac"]
         client_common_oper_data = get_common_oper_data_by_mac(client_mac)
         client_dot11_oper_data = get_dot11_oper_data_by_mac(client_mac)
@@ -420,4 +434,3 @@ def get_client_summary_by_username(username):
 #        printlist_value)
         # this function returns list format because one user may have several devices.
     return list_value
-

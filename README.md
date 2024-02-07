@@ -150,3 +150,4 @@ bssid-stats bssid-stats-frequency 30
 - Client information is updated. (2024/1/11)
 - Client information is updated. (2024/1/17)
 - Client information is updated. (2024/1/19)
+- Change error handling on AP and Client python (2024/2/7)

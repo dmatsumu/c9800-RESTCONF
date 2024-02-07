@@ -120,7 +120,8 @@ def get_wtp_mac_by_ap_name(ap_name):
         return ap_mac
     else:
         print("Input correct AP name")
-        sys.exit()
+        return ap_mac
+#        sys.exit()
 
 #============================================================================================
 # display WLAN ID from "Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-entry"
@@ -221,6 +222,11 @@ def get_rrm_oper_info(wtp_mac, radio_slot_id):
 #============================================================================================
 def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
     wtp_mac = get_wtp_mac_by_ap_name(ap_name)
+    if wtp_mac == "nomac":
+        dict_value = {
+            "ap_mac": wtp_mac
+        }
+        return dict_value
     ap_capwap_data = get_capwap_data(wtp_mac)
     ap_oper_info = get_ap_oper_info(wtp_mac)
     ap_radio_oper_info = get_ap_radio_oper_info(wtp_mac, radio_slot_id)
@@ -293,6 +299,11 @@ def get_ap_info_by_ap_name_slot_id(ap_name, radio_slot_id):
 #============================================================================================
 def get_ap_info_by_ap_name(ap_name):
     wtp_mac = get_wtp_mac_by_ap_name(ap_name)
+    if wtp_mac == "nomac":
+        dict_value = {
+            "ap_mac": wtp_mac
+        }
+        return dict_value
     ap_capwap_data = get_capwap_data(wtp_mac)
     ap_oper_info = get_ap_oper_info(wtp_mac)
 
